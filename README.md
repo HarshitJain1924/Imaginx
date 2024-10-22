@@ -1,4 +1,4 @@
-# Imaginx
+# Imaginx V1
 
 Imaginx is a powerful web application that leverages AI to generate stunning images and engaging text content. Whether you're looking for unique visuals or creative writing, Imaginx provides an intuitive platform for all your content generation needs. This project was created with the help of ChatGPT prompting and my own efforts.
 
