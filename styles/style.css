@@ -1,0 +1,627 @@
+/* General body styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #121212; /* Dark theme background */
+    color: #e0e0e0; /* Dark theme text color */
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Dark Mode (default) */
+body.dark-mode {
+    background-color: #121212; /* Dark theme background */
+    color: #e0e0e0; /* Dark theme text color */
+}
+
+/* Container styling */
+.container {
+    width: 90%;
+    margin: 0 auto;
+    padding: 20px;
+    background: #ffffff; /* Light theme container background */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Light shadow for light theme */
+    margin-top: 40px;
+}
+
+/* Dark Mode Container */
+body.dark-mode .container {
+    background: #1e1e1e; /* Dark theme container background */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4); /* Dark shadow for dark theme */
+}
+
+/* Header styling */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #ccc; /* Light theme border */
+    background: url(../assets/images/header.png) no-repeat;
+    background-size: cover;
+}
+
+body.dark-mode header {
+    border-bottom: 2px solid #333; /* Dark theme border */
+    background-color: #1c1c1c; /* Dark theme header background */
+}
+
+header h1 {
+    font-size: 1.6em;
+    color: #333; /* Light theme header text color */
+}
+
+body.dark-mode header h1 {
+    color: #e0e0e0; /* Dark theme header text color */
+}
+
+.profile-link {
+    display: flex;
+    align-items: center;
+    color: #333; /* Light theme profile link color */
+    text-decoration: none;
+    margin-right: 20px;
+    border: 2px solid #ffffff00;
+    padding: 20px;
+    backdrop-filter: blur(9px);
+}
+
+body.dark-mode .profile-link {
+    color: #e0e0e0; /* Dark theme profile link color */
+}
+
+.profile-pic {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    margin-right: 10px;
+    border: 2px solid #007bff;
+}
+
+.username {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.logo{
+    width: 200px;
+    height: 200px;
+    margin-left: 20px;
+    backdrop-filter: blur(9px);
+}
+/* Navbar styling */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Light shadow for light theme */
+    margin: 5px;
+    backdrop-filter: blur(9px);
+
+}
+
+body.dark-mode .navbar {
+    background-color: transparent;
+    backdrop-filter: blur(9px);    /* Dark theme navbar background */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4); /* Dark shadow for dark theme */
+}
+
+.navbar ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.navbar li {
+    margin: 0 15px;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #333; /* Light theme link color */
+    font-size: 1.1em;
+    transition: color 0.3s;
+}
+
+body.dark-mode .navbar a {
+    color: #e0e0e0; /* Dark theme link color */
+}
+
+.navbar a:hover {
+    color: #007bff;
+}
+
+body.dark-mode .navbar a:hover {
+    color: #66b2ff; /* Dark theme link hover color */
+}
+
+/* Switch (Dark Mode Toggle) */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #bbb;
+    transition: .4s;
+    border-radius: 20px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    background-color: white;
+    transition: .4s;
+    left: 2px;
+    bottom: 2px;
+}
+
+input:checked + .slider {
+    background-color: #007bff;
+}
+
+input:checked + .slider:before {
+    transform: translateX(20px); /* Adjusted for wider switch */
+}
+
+/* Main content */
+main {
+    display: grid;
+    gap: 40px;
+}
+
+/* Forms */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background-color: #ffffff; /* Light theme form background */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Light shadow for light theme */
+}
+
+body.dark-mode form {
+    background-color: #2c2c2c; /* Dark theme form background */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4); /* Dark shadow for dark theme */
+}
+
+form label {
+    font-size: 1.1em;
+    color: #333; /* Light theme label color */
+}
+
+body.dark-mode form label {
+    color: #e0e0e0; /* Dark theme label color */
+}
+
+form input[type="text"], form input[type="submit"] {
+    padding: 10px;
+    font-size: 1em;
+    border-radius: 8px;
+    border: none;
+    background-color: #f5f5f5; /* Light theme input background */
+    color: #333; /* Light theme input text color */
+}
+
+body.dark-mode form input[type="text"], body.dark-mode form input[type="submit"] {
+    background-color: #444; /* Dark theme input background */
+    color: #e0e0e0; /* Dark theme input text color */
+}
+
+form input[type="submit"] {
+    background-color: rgba(255, 217, 1, 0.877);
+    cursor: pointer;
+    transition: background-color 0.3s;
+    text-decoration: none;
+    font-weight: bold;
+    color: #333;
+}
+
+body.dark-mode form input[type="submit"] {
+    background-color: #ffcc00; /* Dark theme submit button background */
+    color: #333; /* Dark theme submit button text color */
+}
+
+form input[type="submit"]:hover {
+    background-color: goldenrod;
+}
+
+body.dark-mode form input[type="submit"]:hover {
+    background-color: #e0a800; /* Dark theme submit button hover background */
+}
+
+/* Saved images section */
+.results {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 10px;
+    padding: 10px;
+}
+
+.generated-image {
+    width: 100%;
+    height: 300px;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.saved-images {
+    margin-top: 40px;
+}
+
+.saved-images h2 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    color: #007bff; /* Light theme section heading color */
+}
+
+body.dark-mode .saved-images h2 {
+    color: #66b2ff; /* Dark theme section heading color */
+}
+
+.image-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 20px;
+}
+
+.image-item {
+    text-align: center;
+    background: #ffffff; /* Light theme image item background */
+    border: 1px solid #ccc; /* Light theme border */
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Light shadow for light theme */
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+body.dark-mode .image-item {
+    background: #333; /* Dark theme image item background */
+    border: 1px solid #444; /* Dark theme border */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4); /* Dark shadow for dark theme */
+}
+
+.image-item img {
+    width: 100%;
+    height: 300px;
+    border-radius: 8px;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.image-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Light shadow on hover */
+}
+
+body.dark-mode .image-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Dark shadow on hover */
+}
+
+/* Buttons */
+.download-btn, .delete-btn {
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-size: 0.9em;
+    font-weight: bold;
+    color: #fff;
+    display: block;
+    text-align: center;
+    transition: background-color 0.3s, transform 0.3s;
+    margin-bottom: 20px;
+    text-decoration: none;
+}
+
+.download-btn {
+    background-color: #4CAF50; /* Light theme download button background */
+}
+
+.download-btn:hover {
+    background-color: #45a049; /* Light theme download button hover background */
+}
+
+body.dark-mode .download-btn {
+    background-color: #388e3c; /* Dark theme download button background */
+}
+
+body.dark-mode .download-btn:hover {
+    background-color: #2c6b2f; /* Dark theme download button hover background */
+}
+
+.delete-btn {
+    background-color: #f44336; /* Light theme delete button background */
+}
+
+.delete-btn:hover {
+    background-color: #e53935; /* Light theme delete button hover background */
+}
+
+body.dark-mode .delete-btn {
+    background-color: #d32f2f; /* Dark theme delete button background */
+}
+
+body.dark-mode .delete-btn:hover {
+    background-color: #b71c1c; /* Dark theme delete button hover background */
+}
+
+.space {
+    margin-top: 30px;
+}
+
+/* Slideshow styling */
+.slideshow {
+    position: relative;
+    max-width: 65%; /* Reduce the max width to make it shorter */
+    aspect-ratio: 3 / 2; /* Maintain the 3:2 aspect ratio */
+    margin: 20px auto;
+    overflow: hidden;
+}
+
+.slideshow-container {
+    position: relative;
+    width: 100%;
+    height: 100%; /* Ensure container takes full height */
+}
+
+.slide {
+    display: none;
+    height: 100%; /* Ensure slide takes full height */
+}
+
+img {
+    width: 100%;
+    height: 100%; /* Ensure image takes full height */
+    object-fit: cover;
+}
+
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: background-color 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+
+.flex-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+    /* Container */
+    .container {
+        width: 100%;
+        padding: 15px;
+        margin-top: 20px;
+    }
+    /* Navbar */
+    .navbar {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .navbar ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .navbar li {
+        margin: 5px 0;
+    }
+
+    /* Slideshow */
+    .slideshow {
+        max-width: 90%;
+    }
+
+    /* Forms */
+    form {
+        padding: 15px;
+    }
+
+    form input[type="text"], form input[type="submit"] {
+        font-size: 0.9em;
+    }
+
+    /* Results and images */
+    .results {
+        grid-template-columns: 1fr;
+    }
+
+    .generated-image, .image-item img {
+        height: auto;
+    }
+
+    /* Flex box */
+    .flex-box {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Header */
+    header h1 {
+        font-size: 1.2em;
+    }
+
+    .profile-link {
+        padding: 5px;
+    }
+
+    /* Navbar */
+    .navbar {
+        padding: 15px;
+    }
+
+    /* Slideshow */
+    .slideshow {
+        max-width: 100%;
+    }
+
+    /* Buttons */
+    .download-btn, .delete-btn {
+        font-size: 0.8em;
+        padding: 8px 10px;
+    }
+
+    /* Flex box */
+    .flex-box {
+        gap: 5px;
+    }
+}
+
+
+/* Media queries for header responsiveness */
+@media (max-width: 768px) {
+    /* Header */
+    header {
+        flex-direction: column;
+        align-items: center;
+        padding: 15px 0;
+        text-align: center;
+    }
+
+    header h1 {
+        font-size: 1.3em;
+        margin-bottom: 10px;
+    }
+
+    .logo {
+        width: 120px;
+        height: 120px;
+        margin: 0;
+    }
+
+    .profile-link {
+        margin-right: 0;
+        padding: 10px;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .profile-pic {
+        width: 35px;
+        height: 35px;
+    }
+
+    .username {
+        font-size: 1em;
+        margin: 5px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Header */
+    header {
+        flex-direction: column;
+        padding: 10px 0;
+    }
+
+    header h1 {
+        font-size: 1.1em;
+    }
+
+    .logo {
+        width: 100px;
+        height: 100px;
+        margin-bottom: 10px;
+    }
+
+    .profile-link {
+        padding: 5px;
+        flex-direction: row;
+    }
+
+    .profile-pic {
+        width: 30px;
+        height: 30px;
+    }
+
+    .username {
+        font-size: 0.9em;
+    }
+}
+
+/* Filter Category Section */
+.filter-category {
+    margin: 20px 0;
+    text-align: center;
+}
+
+.filter-category label {
+    font-size: 1.2em;
+    margin-right: 10px;
+}
+
+#category {
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+    .filter-category {
+        margin: 15px 0;
+    }
+
+    .filter-category label {
+        font-size: 1em;
+    }
+
+    #category {
+        padding: 8px;
+        font-size: 0.9em;
+    }
+}
+
